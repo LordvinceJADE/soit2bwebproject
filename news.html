@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://scontent.fmnl8-1.fna.fbcdn.net/v/t1.15752-9/400911972_1025407925178722_1176973244269116359_n.png?_nc_cat=100&ccb=1-7&_nc_sid=8cd0a2&_nc_eui2=AeEOhzuky3Xu5rSwq3t_xGq9dU-LvrbgmWh1T4u-tuCZaOWXISRc3YsPZ7beg3xxYacTSSoPODe6gUturPRB3uDr&_nc_ohc=f_5WlEpa3-kAX9T2C1X&_nc_ht=scontent.fmnl8-1.fna&oh=03_AdTvYBtX5sqhiJeeAEM8skFu6IkTpYYdY1g-TtYJvz54Mg&oe=65A6F8C4" type="image/x-icon">
+    <style>
+        body {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #301934;
+            letter-spacing: 1px;
+        }
+
+        header {
+            background-color: #333;
+            color: orange;
+            padding: 15px;
+            text-align: center;
+            position: relative;
+        }
+
+        p {
+            color: white;
+        }
+
+        h1 {
+            animation: slideFromRight 1s ease-out;
+            font-size: 300%;
+        }
+
+        h2 {
+            color: orange;
+            font-size: 240%;
+        }
+
+        h4 {
+            text-align: left;
+            padding-left: 15px;
+            color: orange;
+        }
+
+        p {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        @keyframes slideFromRight {
+            from {
+                transform: translateX(100%);
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
+
+        .left-image,
+        .right-image {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100px;
+            height: auto;
+        }
+
+        .left-image {
+            left: 18px;
+        }
+
+        .right-image {
+            right: 18px;
+        }
+
+        nav {
+            background-color: #444;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: #333;
+        }
+
+        section {
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #333;
+            color: orange;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @media screen and (max-width: 600px) {
+            nav a {
+                width: 100%;
+                float: none;
+            }
+
+            .left-image,
+            .right-image {
+                width: 60px;
+            }
+
+            h4 {
+                font-size: 18px;
+            }
+
+            p {
+                font-size: 14px; 
+            }
+        }
+
+        a:hover {
+            font-size: 150%;
+            color: orange;
+        }
+
+        #datetime {
+            font-size: 15px;
+            text-align: left;
+            margin-bottom: 10px;
+            padding: 10px;
+            color: white;
+        }
+
+    </style>
+    <title>ASCOT Information Technology</title>
+</head>
+
+<body>
+
+    <header>
+        <img src="https://scontent.fmnl8-1.fna.fbcdn.net/v/t1.15752-9/410974315_741862487839297_475419958015931208_n.png?_nc_cat=100&ccb=1-7&_nc_sid=8cd0a2&_nc_eui2=AeHcCqKNFVZym2xZcws50yR-heSbIBSJltqF5JsgFImW2rbmPS1BY4Ed-_QYlx2lAt-0RwabH1JF5tfmOxcDhVT9&_nc_ohc=TFudOrQfOFQAX_EuTGN&_nc_ht=scontent.fmnl8-1.fna&oh=03_AdRawx5v0epN_u4-w6ionDalC1cK2oGUUeoA0mWGohaHTg&oe=65A7134D" alt="Left Image" class="left-image">
+        <img src="https://scontent.fmnl8-1.fna.fbcdn.net/v/t1.15752-9/400911972_1025407925178722_1176973244269116359_n.png?_nc_cat=100&ccb=1-7&_nc_sid=8cd0a2&_nc_eui2=AeEOhzuky3Xu5rSwq3t_xGq9dU-LvrbgmWh1T4u-tuCZaOWXISRc3YsPZ7beg3xxYacTSSoPODe6gUturPRB3uDr&_nc_ohc=f_5WlEpa3-kAX9T2C1X&_nc_ht=scontent.fmnl8-1.fna&oh=03_AdTvYBtX5sqhiJeeAEM8skFu6IkTpYYdY1g-TtYJvz54Mg&oe=65A6F8C4" alt="Right Image" class="right-image">
+        <h1>ASCOT Information Technology</h1>
+    </header>
+
+    <nav>
+        <a href="group2website.html" target="_self" style="color: orange;">Home</a>
+        <a href="news.html" target="_self" style="color: orange;">News</a>
+        <a href="about.html" target="_self" style="color: orange;">About</a>
+        <a href="developer.html" target="_self" style="color: orange;">Developer</a>
+        <a href="contact.html" target="_self" style="color: orange;">Contact</a>
+    </nav>
+
+    <div id="datetime"></div>
+
+    <script>
+        function updateDateTime() {
+            var now = new Date();
+            var dateTimeString = now.toLocaleString();
+            document.getElementById('datetime').innerText = dateTimeString;
+    }
+
+        updateDateTime();
+
+    
+        setInterval(updateDateTime, 1000);
+    </script>
+
+    <section id="news">
+        <h2>Latest News</h2>
+
+        <p>click here for more info.</p>
+
+        <p class="links" style="font-size: 70%;">
+            <a href="https://www.facebook.com/ascotscitech" target="_balnk">ASCOT BSIT</a> <br />
+            <a href="https://www.facebook.com/ascotaitechs" target="_balnk">ASCOT BSIT STUDENT</a> <br />
+            <a href="https://www.facebook.com/ascotofficialpage" target="_balnk">ASCOT OFFICIAL</a>
+        </p>
+    </section>
+
+    <hr>
+    <h4>ASCOT Research and Development Services Office</h4>
+    <img src="https://scontent.fmnl8-1.fna.fbcdn.net/v/t39.30808-6/404274798_776892747785457_6534414289925762735_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=dd5e9f&_nc_eui2=AeERyYga38m6lhXF59cDH7OhevndBCNd1zd6-d0EI13XN8joQrCuelNu9Xdj6mbk_JzJclC5giB6_qzXE1vmIjJy&_nc_ohc=sOc9rExPVKsAX9qinRS&_nc_ht=scontent.fmnl8-1.fna&oh=00_AfAJaLPG_mIM2latM1CYnW53DWM62rBU5NGnTXevGwVPqw&oe=65806374" alt="error" width="200" style="padding-left: 15px;">
+    <p>Congratulations to Ma'am Cristelita P. Lombres in securing the first place in the Annual In-house Review of Gender-Responsive Research and Development Project Proposal, Social Research Category titled "Assessing the Post Pandemic Readiness of Senior High School Graduates for Pursuing Courses within the K-12 Curriculum, "this stands as a testament to your unwavering dedication, remarkable expertise, and innovative approach in this field.
+        Your exceptional work reflects a deep commitment to advancing gender-responsive methodologies and promoting inclusivity within research and development initiatives. This triumph underscores your invaluable contribution to our organization's mission of fostering a more equitable and empowered society.
+        We commend your exemplary efforts, meticulous research, and the insightful perspective you bring to this crucial area of study. Your success not only signifies a personal milestone but also elevates the standards of excellence within our institution.
+        May this well-deserved recognition inspire others to follow in your footsteps, striving for excellence and embracing the significance of gender-responsive approaches in shaping a more progressive future. Your achievement fills us with immense pride, and we eagerly anticipate witnessing your continued contributions to this vital field.
+        Once again, hearty congratulations on this remarkable accomplishment. Your dedication and expertise are an inspiration to us all.<br />
+        <br />
+        #GenderEquality<br />
+        #ResearchExcellence<br />
+        #InnovationLeadership<br />
+        #SOIT
+    </p>
+
+    <hr>
+    <h4>Hyper Interdiciplinary Conference in the PHILIPPINES 2023</h4>
+    <img src="https://scontent.fmnl8-3.fna.fbcdn.net/v/t39.30808-6/400317283_715952180579292_1514483666865180887_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=3635dc&_nc_eui2=AeEepoNlRh8QLqKPdEWvB20V8RwPLi2xgwfxHA8uLbGDBySUL7Dc37m1lYteO0Tel36MlWQxMZqPq7miFT2rG4TF&_nc_ohc=o2WqRsO4PJMAX_-2mSw&_nc_ht=scontent.fmnl8-3.fna&oh=00_AfBiDp5glcFzDj-3EtKYo7mjvK10lN6bzYoKP13W-sj3bg&oe=65813393" alt="error" width="200" style="padding-left: 15px;">
+    <img src="https://scontent.fmnl8-1.fna.fbcdn.net/v/t39.30808-6/399960514_715953653912478_6932658575217385246_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=3635dc&_nc_eui2=AeFA0SCEDy55skmnwjJERnQu9Q4bgVvPWZH1DhuBW89ZkZ45aVJYhkFAqAn_g9b-xiMKq3LXgE4YOOIfMfBZnGBl&_nc_ohc=J1MyLZRWMb0AX-1Gehf&_nc_oc=AQlUgH3WIdy3X9o1io8lpvbGHqI8rmIUuRAOlga_nOIkTGYA-GVuLmH370hzFNjvFtIxgavRqBfw25mVWOFqLBxA&_nc_ht=scontent.fmnl8-1.fna&oh=00_AfCl13yP8yhHVLLaz3W9BW2y0nzZ1U3CV0PunsJFE6pnvg&oe=6580F24B" alt="error" width="200" style="padding-left: 15px;">
+    <img src="https://scontent.fmnl8-3.fna.fbcdn.net/v/t39.30808-6/400537428_715954043912439_4689256442229172082_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=3635dc&_nc_eui2=AeGHOjXlIVJc9DLxeW-RKq57pDbKcpO90-2kNspyk73T7eLah5I3AFUHGja2oOyMbu8uusjIwrsfEIydESsAM-a_&_nc_ohc=KZMBPhMItVwAX8GX4G9&_nc_ht=scontent.fmnl8-3.fna&oh=00_AfAlP8PhOGKRb9PETHie6IRfNmFI8Z-izD8lePOGndaPlg&oe=6580077E" alt="error" width="180" style="padding-left: 15px;">
+    <img src="https://scontent.fmnl8-3.fna.fbcdn.net/v/t39.30808-6/400537428_715954043912439_4689256442229172082_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=3635dc&_nc_eui2=AeGHOjXlIVJc9DLxeW-RKq57pDbKcpO90-2kNspyk73T7eLah5I3AFUHGja2oOyMbu8uusjIwrsfEIydESsAM-a_&_nc_ohc=KZMBPhMItVwAX8GX4G9&_nc_ht=scontent.fmnl8-3.fna&oh=00_AfAlP8PhOGKRb9PETHie6IRfNmFI8Z-izD8lePOGndaPlg&oe=6580077E" alt="error" width="180" style="padding-left: 15px;">
+    <img src="https://scontent.fmnl8-3.fna.fbcdn.net/v/t39.30808-6/402093445_715955080579002_4484105660480506756_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=3635dc&_nc_eui2=AeHCDQdpNn8MoATAjGGQmKO01lS0CUJ4WG3WVLQJQnhYbb7aL8MnHxe9X_Q8d7bTWToKQiDVAwZyKxZpTgCgEdRq&_nc_ohc=AixqNw8E794AX-cxcGe&_nc_ht=scontent.fmnl8-3.fna&oh=00_AfBAl5XcKU5sJ7KoyNWRDwXJ4dMYs1ALQgwuN45_oba2VQ&oe=65819E3D" alt="error" width="220" style="padding-left: 15px;">
+    
+
+    <p>Last Saturday, on November 11, 2023, the School of Information Technology, along with universities across the country, witnessed a convergence of brilliant minds and groundbreaking ideas at the Hyper Interdisciplinary Conference in the Philippines 2023. The event served as a dynamic platform for professionals, researchers, and enthusiasts to delve into the transformative realm of reformative technologies. From artificial intelligence to sustainable energy solutions, the conference sparked insightful discussions on how these innovations can be tailored for localized impact, addressing unique challenges within the Philippine context.
+        Participants engaged in riveting discussions on the intersection of various disciplines, exploring the potential of hybrid approaches in solving real-world issues. 𝑇ℎ𝑒𝑚𝑒: "Convergence of 𝑅𝑒𝑓𝑜𝑟𝑚𝑎𝑡𝑖𝑣𝑒 Technologies for Localized Solutions.", underscored the importance of adapting global innovations to suit the specific needs of the Philippines. This progressive-thinking perspective opened avenues for collaborative efforts and inspired a collective vision for a technologically advanced and socially responsible future.
+        As the conference concluded, attendees left with more than just knowledge; they carried with them a sense of shared purpose and a commitment to applying these reformative technologies in their respective fields. The HICPH 2023 not only showcased the cutting-edge advancements in technology but also ignited a spark for positive change. It served as a testament to the Philippines' capacity to harness innovation for the greater good, leaving a lasting impact on the nation's technological landscape.
+        Gratitude to the Department of Science and Technology (DOST) for inviting us, the SoIT to the HICPH 2023 for the priceless knowledge and powerful wisdom. Ready to bring this wealth of insights back to our school, sharing with fellow peers, leaders, classmates, and fueling collective growth.
+        "Innovation requires more than just creating; it demands that technological advancements leave a meaningful and positive impact on the society... after all invention without an impact is not innovation." - Sykimte
+        <br />
+        <br />
+        #HICPH2023<br />
+        #HyperInterdisciplinaryconference2023<br />
+        #UST #SoIT  #ASCOT<br />
+        #UniversityofSantoTomas<br />
+        #SchoolofInformationTechnology<br />
+        #AuroraStateCollegeofTechnology<br />
+        #LeaveANest
+        <br />
+
+        <hr>
+
+        <h4>SOIT Cheerdance</h4>
+
+        <img src="https://scontent.fmnl25-5.fna.fbcdn.net/v/t39.30808-6/395711755_705935254914318_8186988944551606851_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=dd5e9f&_nc_eui2=AeGjlsI4RTejSL4xmkQNRIkux6KBlWTOi2rHooGVZM6LavwAu7VIiw8Om4dGrahOuvI5H7C4I8eLeCGOFJOx2AUx&_nc_ohc=uZ1MWCf4RwQAX-YP_7y&_nc_ht=scontent.fmnl25-5.fna&oh=00_AfBzhtgdRBpE8EGDEa63odUmD4IgroQ-oOYBr_E06J8kWA&oe=6584091F" alt="error" width="220" style="padding-left: 15px;">
+        <img src="https://scontent.fmnl25-1.fna.fbcdn.net/v/t39.30808-6/394260787_705935928247584_1335175439110889171_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=dd5e9f&_nc_eui2=AeE4AovPpr3HglpCTZLItcRqFt-pnrt6ceAW36meu3px4EBYlV0D1yNLTY9UTN-N0N6TWUNq5WJYBUAJmiQO0K8Z&_nc_ohc=Eqyj_vk2CcgAX-Ou-qO&_nc_ht=scontent.fmnl25-1.fna&oh=00_AfB_-8I5W9EyDyIxjN9_TuBQWZ_EsJ5Ooc1H0ysqhhhm8A&oe=658282BB" alt="error" width="220" style="padding-left: 15px;">
+        <img src="https://scontent.fmnl25-5.fna.fbcdn.net/v/t39.30808-6/395755214_705936178247559_4978269874781162420_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=dd5e9f&_nc_eui2=AeFbC3v066584WaZTpt4_DW-EX0CbpYVHhgRfQJulhUeGKFERNNO32yljXGSSwtXYCo1a3s_iE9IuoMIH7gPQc5_&_nc_ohc=BQKduJB0n00AX_rpAMm&_nc_ht=scontent.fmnl25-5.fna&oh=00_AfBM5rDIAfXpm4FJfRIUXMntrrvDTdAfNTKVnfSJVfZSPw&oe=6582F46F" alt="error" width="220" style="padding-left: 15px;">
+        <img src="https://scontent.fmnl25-3.fna.fbcdn.net/v/t39.30808-6/395453872_705936521580858_7935436346333429508_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=dd5e9f&_nc_eui2=AeFcCPHdqgKKMjOw9ep0Eyyq4ck-npEFJNXhyT6ekQUk1QyjCr_StSrceUwT3-mfwfcMc7kOgjQJafOafsW9YH61&_nc_ohc=ur82F5vOGjcAX_qUrdu&_nc_ht=scontent.fmnl25-3.fna&oh=00_AfClAwrUptsCI38q2iFPncL5s9MYX1iJptWMHF3DS0Qq4Q&oe=6582F77F" alt="error" width="220" style="padding-left: 15px;">
+        <img src="https://scontent.fmnl25-1.fna.fbcdn.net/v/t39.30808-6/395233403_705937221580788_435294854800024355_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=dd5e9f&_nc_eui2=AeHNDiVkrAOxcAGMZnNUCyE2p9kFg3EA2Qqn2QWDcQDZCkeidwgXeIFDVDbM5phXfEvcWFDGZwGBgMvt1NCnSF4p&_nc_ohc=PGQSwnzOH20AX-W70j3&_nc_ht=scontent.fmnl25-1.fna&oh=00_AfAik5MSBMpJeLV7q_DeneZ4H1r-jEu1CHvsr09rzZhnIA&oe=65838DB2" alt="error" width="220" style="padding-left: 15px;">
+
+        <p>
+        | 𝐓𝐇𝐄 𝐅𝐀𝐈𝐋𝐔𝐑𝐄𝐒 𝐇𝐀𝐒 𝐑𝐈𝐒𝐄𝐍<br>
+        𝑆𝑜𝐼𝑇: 𝐶ℎ𝑒𝑒𝑟𝑑𝑎𝑛𝑐𝑒 𝐶ℎ𝑎𝑚𝑝𝑖𝑜𝑛🏆<br>
+        We stand together in awe and excitement as we celebrate the indomitable spirit and unwavering determination of our Cheerdance champion this year 2023 - SoIT. <br><br>
+        As School of Information Technology takes the dance floor, remember that it's not just about the choreography and cheers, it's allabout celebrating their spirit of never giving up. They have triumphed over adversities that could have shattered their dreams, at this moment, they stand as champions of unwavering determination, courage, and unity. They've embraced their past challenges, setbacks, and failures, using them as stepping stones to reach new heights of success. Their failures have risen, and filt us in this position. This journey has been marked by countless hours of practice, determination, and the ability to rise above every challenge. They've faced setbacks and disappointments that might have broken others, but these experiences have only made them stronger and more united as a team.They all rise above these challenges, showing that working together and being determined are what make them really strong. <br><br>
+        Join us in showering SoIT with your cheers, your energy, and your all support. They are not just cheerleaders; they are the embodiment of a spirit that refuses to be defeated. They represent our pride, our passion, and our determination.
+        Let's unite and show our overwhelming support for SoIT, the true champions of the Cheerdance Competition. 
+        Together, we prove that from failures, champions always rise.
+        Special thanks to our amazing trainer, Sir Vhilbrain Sanchez  and to Ma'am Gabbie Balidbid Marzo , our facilitator, as well as to all the instructors of SoIT. We thank you from the bottom of our hearts. We couldn't have done it without you.
+        Thank You LORD☝️<br>
+        _________________________________<br>
+        ✒️: Charie Nell Oliveros
+        📷: Adrian Miras, Charlo Geneta, Jean Reyel Lorenzo, Gabrielle Bennet Britos <br>
+        _________________________________<br>
+        <br>
+        #SoITChampions<br>
+        #TheFailuresHaveRisen<br>
+        #Ponkanitas<br>
+        #InnovativeDisciplinedTalented<br>
+        #AuroraStateCollegeofTechnology<br>
+        #SchoolofInformationTechnology<br>
+        </p>
+
+        <hr>
+
+        <h4>Civil Service Passers</h4>
+
+        <img src="https://scontent.fmnl25-1.fna.fbcdn.net/v/t39.30808-6/399021274_711842714323572_8595143072878473566_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=dd5e9f&_nc_eui2=AeGMlQP6zG6HuTMleK4NkaoiuzVawEv2XuO7NVrAS_Ze420_nZpOEF7jRSgmuN-IRVqF4wqr_HNb1qhH4antwQ6M&_nc_ohc=3N8Lta2dLckAX-iicZ2&_nc_ht=scontent.fmnl25-1.fna&oh=00_AfCO7js7LA5NgDkeC9tnQPK9zofC1XzcD2wLAJMuMlE3pA&oe=658305FA" alt="error" width="220" style="padding-left: 15px;">
+        <img src="https://scontent.fmnl25-4.fna.fbcdn.net/v/t39.30808-6/399008783_711842794323564_764574172291593717_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=dd5e9f&_nc_eui2=AeFWDrnSGfn2EoaAa5LPE6yaePexyNROfRZ497HI1E59Fp8gnuWoV5039W5eNTFk2uKMXSYEmBDplEGrO9M3gjfw&_nc_ohc=HSRO8BZ7GLEAX-SZkBj&_nc_ht=scontent.fmnl25-4.fna&oh=00_AfAmg8W12KT2pULpgGLVR_1-8Xhz04MZJ5BJLKSDPJQZ4g&oe=65837CFE" alt="error" width="220" style="padding-left: 15px;">
+
+        <p>
+            𝐂𝐎𝐍𝐆𝐑𝐀𝐓𝐔𝐋𝐀𝐓𝐈𝐎𝐍𝐒 to 𝐌𝐚'𝐚𝐦 𝐄𝐝𝐧𝐚 𝐘. 𝐍𝐚𝐩𝐨𝐥𝐞𝐬 and 𝐌𝐬. 𝐉𝐮𝐥𝐢𝐚 𝐏𝐚𝐭𝐫𝐢𝐜𝐢𝐚 𝐓. 𝐒𝐨𝐫𝐢𝐚𝐨 for passing the Civil Service Exam. Your dedication has paid off, and you're now prepared to make a positive impact to our society. We are proud of both of you! <br><br>
+            #CivilServicePassers <br><br><br>
+        </p>
+    </p>
+
+    <footer>
+        &copy; 2023 School of Information Technology. All rights reserved.
+    </footer>
+
+</body>
+
+</html>
